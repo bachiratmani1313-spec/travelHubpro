@@ -5,7 +5,7 @@ import Script from "next/script";
 export default function Home() {
   return (
     <main className="container">
-      <h2>Compare Flights & Hotels</h2>
+      <h2>Compare Flights, Hotels & Travel Deals</h2>
 
       {/* AVIASALES */}
       <div className="widget">
@@ -25,11 +25,28 @@ export default function Home() {
 
       {/* KIWI */}
       <div className="card">
+        <a href="https://kiwi.tp.st/499802" target="_blank">
+          ✈️ Find cheaper flights (Kiwi)
+        </a>
+      </div>
+
+      {/* TIQETS */}
+      <div className="card">
         <a
-          href="https://kiwi.tp.st/499802"
+          href="https://www.tiqets.com/en/?partner=499802"
           target="_blank"
         >
-          ✈️ Find cheaper flights (Kiwi)
+          🎟️ Book tours & attractions (Tiqets)
+        </a>
+      </div>
+
+      {/* DISCOVERCARS */}
+      <div className="card">
+        <a
+          href="https://www.discovercars.com/?a_aid=499802"
+          target="_blank"
+        >
+          🚗 Rent a car worldwide (DiscoverCars)
         </a>
       </div>
     </main>
