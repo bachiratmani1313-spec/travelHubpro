@@ -1,3 +1,5 @@
+import "./style.css";
+
 const destinations = {
   paris: {
     name: "Paris",
@@ -57,6 +59,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const city = destinations[params.slug];
+
   if (!city) {
     return {
       title: "Destination introuvable | Vrax Voyage"
