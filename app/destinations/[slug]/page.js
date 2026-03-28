@@ -1,4 +1,4 @@
-import "./style.css";
+import styles from "./style.module.css";
 
 const destinations = {
   paris:{name:"Paris",country:"France",airport:"PAR"},
@@ -71,45 +71,41 @@ export default function DestinationPage({ params }) {
   const city = destinations[params.slug];
 
   if (!city) {
-    return <main className="container"><h2>Not found</h2></main>;
+    return <main className={styles.container}><h2>Not found</h2></main>;
   }
 
   return (
-    <main className="destination-page">
-
-      <section className="hero-city">
-        <div className="hero-city-overlay">
-          <p className="city-country">{city.country}</p>
+    <main className={styles.destinationPage}>
+      <section className={styles.heroCity}>
+        <div className={styles.heroCityOverlay}>
+          <p className={styles.cityCountry}>{city.country}</p>
           <h1>{city.name}</h1>
         </div>
       </section>
 
-      <section className="destination-content">
-        <div className="grid-links">
-
-          <a href={`https://www.aviasales.com/search/${city.airport}?marker=499802`} target="_blank" className="city-card">
+      <section className={styles.destinationContent}>
+        <div className={styles.gridLinks}>
+          <a href={`https://www.aviasales.com/search/${city.airport}?marker=499802`} target="_blank" rel="noopener noreferrer" className={styles.cityCard}>
             ✈️ Vols Aviasales
           </a>
 
-          <a href="https://kiwi.tp.st/499802" target="_blank" className="city-card">
+          <a href="https://kiwi.tp.st/499802" target="_blank" rel="noopener noreferrer" className={styles.cityCard}>
             🛫 Vols Kiwi
           </a>
 
-          <a href={`https://search.hotellook.com/?destination=${city.name}&marker=499802`} target="_blank" className="city-card">
+          <a href={`https://search.hotellook.com/?destination=${encodeURIComponent(city.name)}&marker=499802`} target="_blank" rel="noopener noreferrer" className={styles.cityCard}>
             🏨 Hôtels
           </a>
 
-          <a href="https://www.tiqets.com/en/?partner=499802" target="_blank" className="city-card">
+          <a href="https://www.tiqets.com/en/?partner=499802" target="_blank" rel="noopener noreferrer" className={styles.cityCard}>
             🎟️ Activités
           </a>
 
-          <a href="https://www.discovercars.com/?a_aid=499802" target="_blank" className="city-card">
+          <a href="https://www.discovercars.com/?a_aid=499802" target="_blank" rel="noopener noreferrer" className={styles.cityCard}>
             🚗 Voitures
           </a>
-
         </div>
       </section>
-
     </main>
   );
 }
